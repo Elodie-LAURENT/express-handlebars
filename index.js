@@ -8,7 +8,8 @@ app.set('view engine', 'hbs');
 
 app.engine('hbs', engine({
     layoutsDir: __dirname + '/views/layouts',
-    extname: 'hbs'
+    extname: 'hbs',
+    defaultLayout: 'mirror_index',
 }));
 
 
@@ -17,7 +18,8 @@ app.use(express.static('public'));
 
 app.get('/', (re, res) => {
     // res.send('Hello World!')});
-   res.render('main', {layout: 'index'})
+    // res.render('main', {layout: 'index'});
+    res.render('main');
 }); 
 
 app.listen(PORT, ()=> console.log(`App is listening to port ${PORT}`));
