@@ -4,10 +4,11 @@ const {engine} = require('express-handlebars');
 
 const PORT = 3000;
 
-app.set('view engine', 'handlebars');
+app.set('view engine', 'hbs');
 
-app.engine('handlebars', engine({
+app.engine('hbs', engine({
     layoutsDir: __dirname + '/views/layouts',
+    extname: 'hbs'
 }));
 
 
