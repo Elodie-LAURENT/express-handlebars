@@ -6,5 +6,9 @@ li {
     color: white;
 }
 
+body {
+    background-color: purple;
+}
+
 .odd {background-color: blue;}
 .even {background-color: green;}

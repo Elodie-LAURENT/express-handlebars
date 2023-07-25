@@ -10,6 +10,7 @@ app.engine('hbs', engine({
     layoutsDir: __dirname + '/views/layouts',
     extname: 'hbs',
     defaultLayout: 'mirror_index',
+    partialsDir: __dirname + '/views/partials'
 }));
 
 
@@ -18,7 +19,7 @@ app.use(express.static('public'));
 
 app.get('/', (re, res) => {
     // res.send('Hello World!')});
-    // res.render('main', {layout: 'index'});
+    res.render('main', {layout: 'index'});
     res.render('main');
 }); 
 
