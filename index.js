@@ -17,10 +17,36 @@ app.engine('hbs', engine({
 //static files (import css file)
 app.use(express.static('public'));
 
+//write an api function
+similutedAPI = () => {
+    return [
+        {
+            name: 'Top Gun',
+            colors: 'even'},
+
+        {
+            name: 'Top Gun II',
+            colors: 'odd'},
+
+        {
+            name: 'Cinderella',
+            colors: 'even'},
+
+        {
+            name: 'The Professional',
+            colors: 'odd'},
+
+        {
+            name: 'Scary Movie II',
+            colors: 'even'},
+    ]
+};
+
+
 app.get('/', (re, res) => {
     // res.send('Hello World!')});
-    res.render('main', {layout: 'index'});
-    res.render('main');
+    res.render('main', {layout: 'index', suggestedMovies: similutedAPI()});
+    //res.render('main');
 }); 
 
 app.listen(PORT, ()=> console.log(`App is listening to port ${PORT}`));
